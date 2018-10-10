@@ -14,15 +14,15 @@ public class SeatBuyingProgram2 extends SeatBuying {
 
 		int min = 70;
 		int max = 90;
-		// int x;
+		double totalPrice = 0.0;
 
 		Scanner chairsNum = new Scanner(System.in);
 		Scanner line = new Scanner(System.in);
 		Scanner column = new Scanner(System.in);
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 3; j++) {
-					newChair[i][j] = new SeatBuying((Math.random() * (max - min)) + min, false);
-							}
+				newChair[i][j] = new SeatBuying((Math.random() * (max - min)) + min, false);
+			}
 
 		}
 
@@ -33,16 +33,44 @@ public class SeatBuyingProgram2 extends SeatBuying {
 
 			System.out.print("Please insert the chair line you want: ");
 			int chairline = line.nextInt();
-
-			System.out.print("Please insert the chair column you want: ");
-			int chaircolumn = line.nextInt();
-			if (newChair[chairline][chaircolumn].isToken() == false) {
-				newChair[chairline][chaircolumn].setToken(true);
-				// isToken
-			} else {
-				System.out.println("this seat is already token");
+			if (chairline > 3 || chairline < 0) {
+				System.out.println("there is no such line");
 				i--;
+			} else {
+
+				System.out.print("Please insert the chair column you want: ");
+				int chaircolumn = line.nextInt();
+
+				if (chaircolumn > 2 || chaircolumn < 0) {
+					System.out.println("there is no such column");
+					i--;
+
+				} else {
+
+					if (newChair[chairline][chaircolumn].isToken() == false) {
+						newChair[chairline][chaircolumn].setToken(true);
+						totalPrice += newChair[chairline][chaircolumn].getPrice();
+					} else {
+						System.out.println("this seat is already token");
+						i--;
+					}
+				}
 			}
 		}
+		System.out.println();
+		System.out.println("------------------------------------");
+		System.out.println("You chose the following chairs: ");
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (newChair[i][j].isToken() == true) {
+					System.out.print(i + "," + j);
+					System.out.println();
+
+				}
+			}
+		}
+		System.out.println("yhe price is: " + totalPrice);
 	}
 }
+
+// int[][] chosenChairs = new int[]
