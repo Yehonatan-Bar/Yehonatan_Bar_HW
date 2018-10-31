@@ -60,8 +60,8 @@ public class SimpleTime {
 		this.minute = (minute >= 0 && minute < 60 ? minute : 0);
 		this.second = (second >= 0 && second < 60 ? second : 0);
 	}
-
-	public void midnight() {
+// void midnight SimpleTime
+	public SimpleTime() {
 		this.hour = 0;
 		this.minute = 0;
 		this.second = 0;
