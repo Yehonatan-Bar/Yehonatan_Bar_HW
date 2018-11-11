@@ -7,7 +7,10 @@
 		private Suitcase suitcase;
 		private int addedKiloPrice;
 		
-		
+		public String print() {
+			return "Flight price: " + getFlightPrice() + "\nMaximum suitcase weight: " + getMaxSuitcaseWeight() +
+					"\nSuitcase weight: " + suitcase.getSuitcaseWeight() + "\nAdded kilo price: " + getAddedKiloPrice();
+		}
 		public Passenger(double flightPrice, int maxSuitcaseWeight, Suitcase suitcase, int addedKiloPrice) {
 			super();
 			this.flightPrice = flightPrice;

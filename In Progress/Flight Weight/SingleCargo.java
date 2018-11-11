@@ -1,19 +1,18 @@
 
-
-	
-	
-
 	public class SingleCargo {
 			
 			private int singleCargoWeight;
 			private String singleCargoName;
+		
 			
+	
+				
 			
 			public SingleCargo() {
 				super();
 			}
 
-			public SingleCargo(int singleCargotWeight, String singleCargoName) {
+			public SingleCargo(int singleCargoWeight, String singleCargoName) {
 				super();
 				setSingleCargoWeight(singleCargoWeight);
 				setSingleCargoName(singleCargoName);

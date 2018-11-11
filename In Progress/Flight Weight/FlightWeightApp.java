@@ -1,4 +1,6 @@
 import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 
 public class FlightWeightApp {
 	static String[] flightItemsList = new String[] { "Passport Pouch " , "Lipstick-sized portable charger "
@@ -33,15 +35,41 @@ public class FlightWeightApp {
 	}
 
 	public static void main(String[] args) {
+boolean isOverweight;
 
-		Passenger passenger = new Passenger(((Math.random() * (1000 - 100)) + 100),
+		Passenger Noam = new Passenger(((Math.random() * (1000 - 100)) + 100),
 				(int) ((Math.random() * (100 - 10)) + 10), randomSuitcase(), (int) ((Math.random() * (200 - 10)) + 10));
+
+		isOverweight = (Noam.getMaxSuitcaseWeight()	<	Noam.getSuitcase().getSuitcaseWeight()?true:false);
+		if (isOverweight ) {
+			System.out.println("The suitcase is overweight, do you want to pay for the extra items? (y/n)");
+			Scanner scan = new Scanner(System.in);
+			String pay = scan.nextLine();
+			if (pay == "y") {
+				System.out.println("For payment: " + 
+			(Noam.getMaxSuitcaseWeight()-Noam.getSuitcase().getSuitcaseWeight())*Noam.getAddedKiloPrice());
+			}
+			
+			
+			
+		} else {
+			System.out.println("SuitcaseWeight: " + Noam.getSuitcase().getSuitcaseWeight()
+				+	"\nMaxSuitcaseWeight: "+Noam.getMaxSuitcaseWeight());
+			
+			
+		}
 		
 		
-	}
+			}
 
 }
 
+
+
+
+
+
+//  
 /*
  * productsCart.add(product);
  * 

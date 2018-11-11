@@ -6,6 +6,8 @@ public class Suitcase extends SingleCargo {
 	private ArrayList<SingleCargo> suitcase;
 	private int suitcaseWeight = 0;
 
+	
+	
 	public Suitcase() {
 		super();
 		this.suitcase = new ArrayList<SingleCargo>();
@@ -21,12 +23,15 @@ public class Suitcase extends SingleCargo {
 	}
 
 	public int getSuitcaseWeight() {
-		for (SingleCargo sum : this.suitcase) {
-			this.suitcaseWeight += sum.getSingleCargoWeight();
-		}
-		return suitcaseWeight;
+		for (int i = 0; i < suitcase.size(); i++) {
+			
+			this.suitcaseWeight += suitcase.get(i).getSingleCargoWeight();
+			
+		} 
+		return this.suitcaseWeight;
 
 	}
 
 }
 
+// (SingleCargo sum : this.suitcase)
