@@ -41,10 +41,7 @@ public class SimpleTime {
 	public boolean equals(SimpleTime chekedTime) {
 		return (this.hour == chekedTime.getHour() && this.minute == chekedTime.getMinute()
 				&& this.second == chekedTime.getSecond() ? true : false);
-//			return true;
-//		} else {
-//			return false;
-//		}
+
 	}
 
 	public String toString() {
